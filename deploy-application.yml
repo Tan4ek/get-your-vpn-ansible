@@ -1,0 +1,12 @@
+---
+# Deploy get-your-vpn
+
+- name: install get-your-vpn
+  hosts: all
+  roles:
+    - get-your-vpn-docker-network
+    - get-your-vpn-ss
+    - get-your-vpn-openvpn
+    - get-your-vpn-prometheus
+    - get-your-vpn-openvpn-prometheus-exporter
+    - get-your-vpn-config

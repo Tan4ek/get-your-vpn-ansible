@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+  openvpn:
+    cap_add:
+      - NET_ADMIN
+    image: tan4ek/openvpn-http-api:latest
+    container_name: {{ get_your_vpn_openvpn_container_name }}
+    ports:
+      - "1194:1194/udp"
+      - "{{ get_your_vpn_openvpn_port }}:8090" # unsafe
+    restart: always
+    volumes:
+      - ./openvpn-data/conf:/etc/openvpn
+      - ./config.yml:/opt/openvpn-http-api/config.yml:ro
+      - ./openvpn-data/openvpn-status.log:/tmp/openvpn-sstatus.log
+
+networks:
+  default:
+    external:
+      name: get-your-vpn

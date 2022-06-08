@@ -1,0 +1,17 @@
+[get-your-vpn-config]
+Host = {{ get_your_vpn_host }}
+
+[openvpn-http-api]
+Uri = http://{{ get_your_vpn_openvpn_container_name }}:{{ get_your_vpn_openvpn_port }}
+
+[outline-ss-server-user-manager]
+Uri = http://{{ get_your_vpn_ss_container_name }}:{{ get_your_vpn_ss_port }}
+
+[vpn-metrics]
+PrometheusUri = http://{{ get_your_vpn_prometheus_container_name }}:{{ get_your_vpn_prometheus_port }}
+
+[sqlite]
+FilePath = get-your-vpn-config.sqlite3
+
+[admin]
+XApiKey = supersecureapikey

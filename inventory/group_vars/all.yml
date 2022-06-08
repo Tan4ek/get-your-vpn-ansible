@@ -1,0 +1,15 @@
+get_your_vpn_host: fuck-rkn.net
+get_your_vpn_openvpn_container_name: get-your-vpn-openvpn
+get_your_vpn_openvpn_port: 8090
+get_your_vpn_openvpn_prometheus_exporter_container_name: get-your-vpn-openvpn-prometheus-exporter
+get_your_vpn_openvpn_prometheus_exporter_port: 9176
+get_your_vpn_ss_container_name: get-your-vpn-ss
+get_your_vpn_ss_port: 8093
+get_your_vpn_ss_prometheus_exporter_port: 9091
+get_your_vpn_prometheus_container_name: get-your-vpn-prometheus
+get_your_vpn_prometheus_port: 9090
+get_your_vpn_config_container_name: get-your-vpn-config
+get_your_vpn_config_container_port: 8091
+
+# secret keys
+openvpn_private_key: example-super-secret-key

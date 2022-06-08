@@ -1,0 +1,24 @@
+---
+# get-your-vpn-ss
+
+- name: create directory
+  ansible.builtin.file:
+    path: /opt/get-your-vpn/get-your-vpn-ss
+    state: directory
+    mode: '0755'
+
+- name: create config
+  copy: src=config.yml dest=/opt/get-your-vpn/get-your-vpn-ss/config.yml
+
+- name: prepare docker-compose.yml
+  template:
+    src: docker-compose.yml.j2
+    dest: /opt/get-your-vpn/get-your-vpn-ss/docker-compose.yml
+
+- name: run get-your-vpn-ss
+  become: true
+  docker_compose:
+    project_src: /opt/get-your-vpn/get-your-vpn-ss
+    build: no
+    files:
+    - docker-compose.yml

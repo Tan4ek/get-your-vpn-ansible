@@ -1,0 +1,6 @@
+---
+# get-your-vpn-docker-network
+
+- name: Create a network
+  community.docker.docker_network:
+    name: get-your-vpn

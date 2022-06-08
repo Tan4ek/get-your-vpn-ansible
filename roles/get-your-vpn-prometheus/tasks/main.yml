@@ -1,0 +1,31 @@
+---
+# get-your-vpn-prometheus
+
+- name: create directory
+  ansible.builtin.file:
+    path: /opt/get-your-vpn/get-your-vpn-prometheus
+    state: directory
+    mode: '0755'
+
+- name: create prometheus config directory
+  ansible.builtin.file:
+    path: /opt/get-your-vpn/get-your-vpn-prometheus/config
+    state: directory
+    mode: '0755'
+
+- name: prepare prometheus config
+  template:
+    src: prometheus.yml.j2
+    dest: /opt/get-your-vpn/get-your-vpn-prometheus/config/prometheus.yml
+
+- name: prepare docker-compose.yml
+  template:
+    src: docker-compose.yml.j2
+    dest: /opt/get-your-vpn/get-your-vpn-prometheus/docker-compose.yml
+
+- name: run get-your-vpn-prometheus
+  docker_compose:
+    project_src: /opt/get-your-vpn/get-your-vpn-prometheus
+    build: no
+    files:
+    - docker-compose.yml

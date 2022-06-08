@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  ss-server-user-manager:
+    image: tan4ek/outline-ss-server-user-manager:latest
+    container_name: {{ get_your_vpn_ss_container_name }}
+    volumes:
+      - './config.yml:/user-manager/outline-ss-server/config.yml'
+    ports:
+      - '{{ get_your_vpn_ss_port }}:8080'
+      - '443:9000'
+      - '{{ get_your_vpn_ss_prometheus_exporter_port }}:9091'
+
+networks:
+  default:
+    external:
+      name: get-your-vpn

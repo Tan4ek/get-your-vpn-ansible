@@ -1,0 +1,15 @@
+global:
+  scrape_interval: 30s
+  scrape_timeout: 10s
+
+scrape_configs:
+   - job_name: "outline-server"
+     metrics_path: '/metrics'
+     scrape_interval: 10s
+     static_configs:
+       - targets: ["{{ get_your_vpn_ss_container_name }}:{{ get_your_vpn_ss_prometheus_exporter_port }}"]
+   - job_name: "openvpn-server"
+     metrics_path: '/metrics'
+     scrape_interval: 10s
+     static_configs:
+       - targets: ["{{ get_your_vpn_openvpn_prometheus_exporter_container_name }}:{{ get_your_vpn_openvpn_prometheus_exporter_port }}"]
