@@ -28,3 +28,12 @@ All application are installed using docker and docker-compose.
 ## Run installation
 
 `ansible-playbook --private-key={{ path to ssh key for server }} -i=inventory --user={{ ssh user }} --become -K deploy-application.yml`
+
+## After installation
+
+1. Check docker containers `docker ps -f name=get-your-vpn`.
+2. If openvpn not initialized (first run) follow [this manual](https://github.com/kylemanna/docker-openvpn/blob/master/docs/docker-compose.md). Use password for primary key from `openvpn_private_key` config.
+
+## What needs to install manually  
+
+[Install frontend](https://github.com/TimAle/get-your-vpn-config-ui) for invite link and vpn provider manager. 
