@@ -1,4 +1,4 @@
-get_your_vpn_host: fuck-rkn.net
+# docker container configuration
 get_your_vpn_openvpn_container_name: get-your-vpn-openvpn
 get_your_vpn_openvpn_port: 8090
 get_your_vpn_openvpn_prometheus_exporter_container_name: get-your-vpn-openvpn-prometheus-exporter
@@ -10,6 +10,12 @@ get_your_vpn_prometheus_container_name: get-your-vpn-prometheus
 get_your_vpn_prometheus_port: 9090
 get_your_vpn_config_container_name: get-your-vpn-config
 get_your_vpn_config_container_port: 8091
+
+# network
+get_your_vpn_host: fuck-rkn.net
+
+# files paths
+base_path: /opt/get-your-vpn
 
 # secret keys
 openvpn_private_key: example-super-secret-key

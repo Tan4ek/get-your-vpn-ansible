@@ -7,7 +7,7 @@ services:
     ports:
       - '{{ get_your_vpn_openvpn_prometheus_exporter_port }}:9176'
     volumes:
-      - '/opt/get-your-vpn/get-your-vpn-openvpn/openvpn-data/openvpn-status.log:/etc/openvpn_exporter/server.status'
+      - '{{ base_path }}/get-your-vpn-openvpn/openvpn-data/openvpn-status.log:/etc/openvpn_exporter/server.status'
     command: -openvpn.status_paths /etc/openvpn_exporter/server.status
 
 networks:
