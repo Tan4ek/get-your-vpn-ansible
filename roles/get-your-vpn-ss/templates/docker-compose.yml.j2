@@ -10,6 +10,7 @@ services:
       - '{{ get_your_vpn_ss_port }}:8080'
       - '443:9000'
       - '{{ get_your_vpn_ss_prometheus_exporter_port }}:9091'
+    restart: always
 
 networks:
   default:

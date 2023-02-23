@@ -9,6 +9,7 @@ services:
     volumes:
       - '{{ base_path }}/get-your-vpn-openvpn/openvpn-data/openvpn-status.log:/etc/openvpn_exporter/server.status'
     command: -openvpn.status_paths /etc/openvpn_exporter/server.status
+    restart: always
 
 networks:
   default:

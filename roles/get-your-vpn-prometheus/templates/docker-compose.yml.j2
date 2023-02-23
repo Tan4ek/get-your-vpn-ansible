@@ -11,6 +11,7 @@ services:
       - ./config:/etc/prometheus
       - prometheus-data:/prometheus
     command: --web.enable-lifecycle  --config.file=/etc/prometheus/prometheus.yml --storage.tsdb.retention.time=7d --storage.tsdb.retention.size=4GB
+    restart: always
 
 volumes:
   prometheus-data:
