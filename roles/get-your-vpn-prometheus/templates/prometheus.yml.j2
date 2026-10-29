@@ -7,9 +7,9 @@ scrape_configs:
      metrics_path: '/metrics'
      scrape_interval: 10s
      static_configs:
-       - targets: ["{{ get_your_vpn_ss_container_name }}:{{ get_your_vpn_ss_prometheus_exporter_port }}"]
+       - targets: ["{{ get_your_vpn_ss_container_name }}:9091"]
    - job_name: "openvpn-server"
      metrics_path: '/metrics'
      scrape_interval: 10s
      static_configs:
-       - targets: ["{{ get_your_vpn_openvpn_prometheus_exporter_container_name }}:{{ get_your_vpn_openvpn_prometheus_exporter_port }}"]
+       - targets: ["{{ get_your_vpn_openvpn_prometheus_exporter_container_name }}:9176"]

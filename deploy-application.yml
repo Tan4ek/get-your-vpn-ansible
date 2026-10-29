@@ -3,6 +3,11 @@
 
 - name: install get-your-vpn
   hosts: all
+  pre_tasks:
+    - name: validate config API key before deploying services
+      ansible.builtin.import_role:
+        name: get-your-vpn-config
+        tasks_from: validate
   roles:
     - get-your-vpn-docker-network
     - get-your-vpn-ss
