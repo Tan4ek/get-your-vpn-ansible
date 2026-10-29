@@ -18,4 +18,5 @@ get_your_vpn_host: fuck-rkn.net
 base_path: /opt/get-your-vpn
 
 # secret keys
+# Set get_your_vpn_config_api_key in an encrypted Vault file; it has no default.
 openvpn_private_key: example-super-secret-key

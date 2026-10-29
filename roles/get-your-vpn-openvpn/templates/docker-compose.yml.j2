@@ -8,7 +8,7 @@ services:
     container_name: {{ get_your_vpn_openvpn_container_name }}
     ports:
       - "1194:1194/udp"
-      - "{{ get_your_vpn_openvpn_port }}:8090" # unsafe
+      - "127.0.0.1:{{ get_your_vpn_openvpn_port }}:8090"
     restart: always
     volumes:
       - ./openvpn-data/conf:/etc/openvpn

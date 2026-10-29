@@ -6,7 +6,7 @@ services:
     container_name: {{ get_your_vpn_prometheus_container_name }}
     # network_mode: host
     ports:
-      - "{{ get_your_vpn_prometheus_port }}:9090"
+      - "127.0.0.1:{{ get_your_vpn_prometheus_port }}:9090"
     volumes:
       - ./config:/etc/prometheus
       - prometheus-data:/prometheus

@@ -5,7 +5,7 @@ services:
     image: kumina/openvpn-exporter
     container_name: {{ get_your_vpn_openvpn_prometheus_exporter_container_name }}
     ports:
-      - '{{ get_your_vpn_openvpn_prometheus_exporter_port }}:9176'
+      - '127.0.0.1:{{ get_your_vpn_openvpn_prometheus_exporter_port }}:9176'
     volumes:
       - '{{ base_path }}/get-your-vpn-openvpn/openvpn-data/openvpn-status.log:/etc/openvpn_exporter/server.status'
     command: -openvpn.status_paths /etc/openvpn_exporter/server.status

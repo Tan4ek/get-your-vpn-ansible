@@ -1,0 +1,10 @@
+---
+- name: require get_your_vpn_config_api_key from encrypted inventory
+  ansible.builtin.assert:
+    that:
+      - get_your_vpn_config_api_key is defined
+      - get_your_vpn_config_api_key is string
+      - get_your_vpn_config_api_key | length >= 32
+      - get_your_vpn_config_api_key is not search('[^A-Za-z0-9_-]')
+    fail_msg: Set get_your_vpn_config_api_key to a unique random key in Ansible Vault.
+  no_log: true

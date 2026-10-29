@@ -6,7 +6,7 @@ services:
     ports:
       - "{{ get_your_vpn_config_container_port }}:8080"
     volumes:
-      - ./config.ini:/app/config.ini
+      - ./config.ini:/app/config.ini:ro
       - ./get-your-vpn-config.sqlite3:/app/get-your-vpn-config.sqlite3
     restart: always
 

@@ -7,9 +7,9 @@ services:
     volumes:
       - './config.yml:/user-manager/outline-ss-server/config.yml'
     ports:
-      - '{{ get_your_vpn_ss_port }}:8080'
+      - '127.0.0.1:{{ get_your_vpn_ss_port }}:8080'
       - '443:9000'
-      - '{{ get_your_vpn_ss_prometheus_exporter_port }}:9091'
+      - '127.0.0.1:{{ get_your_vpn_ss_prometheus_exporter_port }}:9091'
     restart: always
 
 networks:
